@@ -20,8 +20,19 @@
             <li><a class="dropdown-item" routerLink="/customers">Search customers</a></li>
             <li><a class="dropdown-item" routerLink="/new-customer">New customer</a></li>
           </ul>
+
+        </li>
+        <ul *ngIf="authService.isAuthenticated==true">
+        <li >
+          <a class="nav-link active">
+        {{this.authService.username}}
+          </a>
         </li>
 
+        <li>
+          <button (click)="handleLogout()" class="btn btn-success">Log Out</button>
+        </li>
+      </ul>
       </ul>
 
     </div>
